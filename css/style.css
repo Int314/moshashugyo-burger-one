@@ -1,0 +1,335 @@
+@charset "utf-8";
+
+/* ------------------------------ */
+/* カスタムプロパティ
+/* ------------------------------ */
+
+/* カラー */
+:root {
+    --color-accent: #11361F;
+  --color-bg-base: #fcf9f2;
+  --color-bg-light: #fff;
+  --color-font-base: #333;
+  --color-font-light: #fff;
+}
+
+/* フォント */
+:root {
+  --font-family-base: "Oswald", "Noto Sans JP", sans-serif;
+  --font-size-base: 1.4rem;
+}
+@media screen and (min-width: 768px) {
+  :root {
+    --font-size-base: 1.6rem;
+  }
+}
+
+/* コンテナ幅 */
+:root {
+  --width-content: 1080px;
+}
+
+/* ------------------------------ */
+/* 共通
+/* ------------------------------ */
+html {
+  font-size: 62.5%;
+  background-color: var(--color-bg-base);
+}
+
+body {
+  font-size: var(--font-size-base);
+  color: var(--color-font-base);
+  font-family: var(--font-family-base);
+  line-height: 1.75;
+  letter-spacing: 0.08em;
+}
+
+img,
+svg {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+/* utilityクラス */
+.u-visually-hidden {
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  padding: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  margin: -1px !important;
+}
+
+/* コンポーネント */
+.c-section-title {
+  display: inline-block;
+  font-size: 2.4rem;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.c-section-title::after {
+  content: "";
+  display: block;
+  width: 95%;
+  height: 2px;
+  position: absolute;
+  left: calc(2.5%);
+  bottom: 0;
+  background-color: var(--color-accent);
+}
+@media screen and (min-width: 768px) {
+  .c-section-title {
+    font-size: 3.6rem;
+  }
+}
+
+/* レイアウト */
+.l-container {
+  width: 90vw;
+  max-width: var(--width-content);
+  margin: 0 auto;
+}
+
+.img-space img {
+    width: 100%;
+    height: 226px;
+    object-fit: cover;
+}
+@media screen and (min-width: 768px) {
+    .img-space img {
+        height: 496px;
+    }
+}
+
+/* ------------------------------ */
+/* footer
+/* ------------------------------ */
+.footer {
+  background-color: var(--color-accent);
+  padding: 30px 0 25px;
+  text-align: center;
+}
+.footer__copylight {
+  color: var(--color-font-light);
+}
+
+/* ------------------------------ */
+/* fv
+/* ------------------------------ */
+.fv {
+  height: 100vh;
+  background-image: url(../img/kv-img.jpg);
+  background-size: cover;
+  background-position: -200px;
+}
+.fv__inner {
+  position: relative;
+  height: 100vh;
+}
+.site-logo {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media screen and (min-width: 768px) {
+  .fv {
+    background-position: center;
+  }
+  .site-logo {
+    width: 566px;
+    top: 60px;
+    left: -5vw;
+    transform: translate(0, 0);
+  }
+}
+
+/* ------------------------------ */
+/* concept
+/* ------------------------------ */
+.concept {
+    margin-top: 64px;
+}
+.concept-content {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 24px;
+}
+.concept__img-wrapper {
+    width: 100%;
+    max-width: 667px;
+    padding: 24px 4vw;
+}
+.concept__lead-jp {
+    font-size: 2.8rem;
+    letter-spacing: 0.06em;
+}
+.concept__lead-en {
+    font-size: 6.4rem;
+}
+.concept__text {
+    margin-top: 16px;
+}
+@media screen and (min-width: 768px) {
+    .concept-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .concept__text-wrapper {
+        width: 45%;
+        max-width: 413px;
+    }
+    .concept__img-wrapper {
+        position: relative;
+        right: -2.5vw;
+        width: 55%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+    }
+}
+/* ------------------------------ */
+/* menu
+/* ------------------------------ */
+.menu {
+    margin: 64px auto;
+    max-width: var(--width-content);
+}
+.menu__list {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 32px;
+}
+.l-menu-conteiner {
+    width: 90%;
+    margin: 0 auto;
+}
+.menu__item-img-wrapper {
+    width: 100%;
+}
+.menu__item-title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+}
+.menu__item-title {
+    font-size: 2.6rem;
+}
+.menu__item-price {
+    font-size: 2.6rem;
+}
+.menu__item-text {
+    margin-top: 16px;
+}
+@media screen and (min-width: 768px) {
+    .menu {
+        width: 90vw;
+    }
+}
+
+/* ------------------------------ */
+/* shop
+/* ------------------------------ */
+.shop {
+    padding: 64px 0;
+    background-color: var(--color-bg-light);
+}
+.shop__inner {
+    max-width: var(--width-content);
+    margin: 0 auto;
+}
+.shop-container {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 24px;
+}
+.shop__img-wrapper {
+    width: 100%;
+}
+.shop__text-wrapper {
+    width: 90%;
+}
+.shop__title {
+    font-size: 2rem;
+}
+.shop__text {
+    margin-top: 16px;
+}
+.shop-info__list {
+    margin-top: 16px;
+}
+@media screen and (min-width: 768px) {
+    .shop {
+        padding: 64px 5vw;
+    }
+    .shop-container {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    .shop__img-wrapper {
+        width: 50%;
+    }
+    .shop__text-wrapper {
+        width: 50%;
+    }
+}
+
+/* ------------------------------ */
+/* company
+/* ------------------------------ */
+.company {
+    padding: 64px 0;
+}
+.company-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+.company-logo {
+    width: 186px;
+    height: 79px;
+}
+.company-info {
+    text-align: center;
+}
+.company-info__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.company-info__item {
+    font-size: 1.2em;
+}
+.company-sns__list {
+    display: flex;
+    gap: 16px;
+}
+.company-sns__item {
+    font-size: 1.8rem;
+}
+@media screen and (min-width: 768px) {
+    .company-container {
+        flex-direction: row;
+        gap: 32px;
+    }
+    .company-info {
+        text-align: inherit;
+    }
+    .company-sns {
+        margin-left: auto;
+    }
+}
